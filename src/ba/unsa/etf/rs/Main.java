@@ -12,15 +12,19 @@ public class Main {
         n = ulaz.nextInt();
 
         for (int i=1; i<=n; i++)
-        if(n % sumaCifara(i) == 0) System.out.print(n + ", ");
+        if(i % sumaCifara(i) == 0) System.out.print(i + ", ");
 
     }
 
     private static int sumaCifara(int n) {
+        int s=n;
         int sum=0;
-        while(n>0) {
-            sum+=n%10;
-            n/=10;
+
+        while(s!=0) {
+            sum+=s%10;
+            //System.out.println("sum: " + sum);
+            s=s/10;
+            //System.out.println("s: " + s);
         }
 
         return sum;
